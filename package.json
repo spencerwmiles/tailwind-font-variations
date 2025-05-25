@@ -9,6 +9,9 @@
     "README.md",
     "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "echo 'No linting needed for CSS-only package'",
     "check-types": "echo 'No type checking needed for CSS-only package'"
