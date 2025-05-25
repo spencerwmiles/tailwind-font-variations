@@ -583,16 +583,6 @@
   --font-var-MONO: initial;
 }
 
-/* ===== TRANSITION UTILITIES ===== */
-
-@utility font-var-transition {
-  transition: font-variation-settings 150ms ease-in-out;
-}
-
-@utility font-var-transition-slow {
-  transition: font-variation-settings 300ms ease-in-out;
-}
-
-@utility font-var-transition-fast {
-  transition: font-variation-settings 75ms ease-in-out;
+@utility transition-fonts {
+  --transition-property: font-variation-settings;
 } 

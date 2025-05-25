@@ -1,6 +1,6 @@
 {
   "name": "@spencerwmiles/tailwind-font-variations",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Comprehensive Tailwind CSS v4 utilities for variable fonts and font-variation-settings",
   "main": "src/font-variations.css",
   "style": "src/font-variations.css",
