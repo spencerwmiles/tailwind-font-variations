@@ -1,0 +1,40 @@
+{
+  "name": "@spencerwmiles/tailwind-font-variations",
+  "version": "0.0.1",
+  "description": "Comprehensive Tailwind CSS v4 utilities for variable fonts and font-variation-settings",
+  "main": "src/font-variations.css",
+  "style": "src/font-variations.css",
+  "files": [
+    "src/font-variations.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "echo 'No linting needed for CSS-only package'",
+    "check-types": "echo 'No type checking needed for CSS-only package'"
+  },
+  "keywords": [
+    "tailwindcss",
+    "variable-fonts",
+    "font-variation-settings",
+    "css",
+    "typography",
+    "tailwind-v4",
+    "font-weight",
+    "font-width",
+    "optical-size"
+  ],
+  "author": "Spencer W. Miles <7152222+spencerwmiles@users.noreply.github.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spencerwmiles/tailwind-font-variations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spencerwmiles/tailwind-font-variations/issues"
+  },
+  "homepage": "https://github.com/spencerwmiles/tailwind-font-variations#readme"
+} 
