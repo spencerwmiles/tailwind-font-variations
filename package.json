@@ -1,7 +1,7 @@
 {
   "name": "@spencerwmiles/tailwind-font-variations",
-  "version": "0.0.2",
-  "description": "Comprehensive Tailwind CSS v4 utilities for variable fonts and font-variation-settings",
+  "version": "0.0.3",
+  "description": "Tailwind CSS v4 utilities for variable fonts with variation-setting-* namespace. Compatible with tailwind-merge.",
   "main": "src/font-variations.css",
   "style": "src/font-variations.css",
   "files": [
@@ -12,10 +12,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "lint": "echo 'No linting needed for CSS-only package'",
-    "check-types": "echo 'No type checking needed for CSS-only package'"
-  },
   "keywords": [
     "tailwindcss",
     "variable-fonts",
@@ -25,7 +21,9 @@
     "tailwind-v4",
     "font-weight",
     "font-width",
-    "optical-size"
+    "optical-size",
+    "tailwind-merge",
+    "variation-setting"
   ],
   "author": "Spencer W. Miles <7152222+spencerwmiles@users.noreply.github.com>",
   "license": "MIT",

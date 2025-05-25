@@ -1,8 +1,8 @@
 /**
- * Tailwind Font Variations - Comprehensive Variable Font Support
- * 
- * Provides utilities for all common variable font axes using Tailwind CSS v4's
- * @utility and @theme directives. Works with any variable font.
+ * Tailwind Font Variations - Variable Font Support
+
+ * Provides utilities for variable font axes using Tailwind CSS v4's
+ * @utility and @theme directives. Compatible with tailwind-merge.
  * 
  * Supported axes:
  * - wght (Weight): Font weight
@@ -10,579 +10,324 @@
  * - slnt (Slant): Font slant in degrees
  * - ital (Italic): Italic on/off
  * - opsz (Optical Size): Optical sizing
- * - GRAD (Grade): Grade/emphasis (font-specific)
- * - CASL (Casual): Casual axis (some fonts)
- * - CRSV (Cursive): Cursive axis (some fonts)
- * - MONO (Monospace): Monospace axis (some fonts)
- * - SOFT (Softness): Softness axis (some fonts)
- * - WONK (Wonky): Wonky axis (some fonts)
+ * - GRAD (Grade): Grade/emphasis
+ * - CASL (Casual): Casual axis
+ * - CRSV (Cursive): Cursive axis
+ * - MONO (Monospace): Monospace axis
+ * - Plus support for any custom axes
  */
 
 @theme {
   /* Weight axis (wght) - 1 to 1000, commonly 100-900 */
-  --font-var-wght-100: 100;
-  --font-var-wght-200: 200;
-  --font-var-wght-300: 300;
-  --font-var-wght-400: 400;
-  --font-var-wght-500: 500;
-  --font-var-wght-600: 600;
-  --font-var-wght-700: 700;
-  --font-var-wght-800: 800;
-  --font-var-wght-900: 900;
+  --variation-setting-wght-100: 100;
+  --variation-setting-wght-200: 200;
+  --variation-setting-wght-300: 300;
+  --variation-setting-wght-400: 400;
+  --variation-setting-wght-500: 500;
+  --variation-setting-wght-600: 600;
+  --variation-setting-wght-700: 700;
+  --variation-setting-wght-800: 800;
+  --variation-setting-wght-900: 900;
 
   /* Width axis (wdth) - percentage, commonly 50%-200% */
-  --font-var-wdth-50: 50%;
-  --font-var-wdth-62: 62.5%;
-  --font-var-wdth-75: 75%;
-  --font-var-wdth-87: 87.5%;
-  --font-var-wdth-100: 100%;
-  --font-var-wdth-112: 112.5%;
-  --font-var-wdth-125: 125%;
-  --font-var-wdth-150: 150%;
-  --font-var-wdth-175: 175%;
-  --font-var-wdth-200: 200%;
+  --variation-setting-wdth-50: 50%;
+  --variation-setting-wdth-62: 62.5%;
+  --variation-setting-wdth-75: 75%;
+  --variation-setting-wdth-87: 87.5%;
+  --variation-setting-wdth-100: 100%;
+  --variation-setting-wdth-112: 112.5%;
+  --variation-setting-wdth-125: 125%;
+  --variation-setting-wdth-150: 150%;
+  --variation-setting-wdth-175: 175%;
+  --variation-setting-wdth-200: 200%;
 
   /* Slant axis (slnt) - degrees, commonly -15 to 15 */
-  --font-var-slnt--15: -15;
-  --font-var-slnt--12: -12;
-  --font-var-slnt--9: -9;
-  --font-var-slnt--6: -6;
-  --font-var-slnt--3: -3;
-  --font-var-slnt-0: 0;
-  --font-var-slnt-3: 3;
-  --font-var-slnt-6: 6;
-  --font-var-slnt-9: 9;
-  --font-var-slnt-12: 12;
-  --font-var-slnt-15: 15;
+  --variation-setting-slnt--15: -15;
+  --variation-setting-slnt--12: -12;
+  --variation-setting-slnt--9: -9;
+  --variation-setting-slnt--6: -6;
+  --variation-setting-slnt--3: -3;
+  --variation-setting-slnt-0: 0;
+  --variation-setting-slnt-3: 3;
+  --variation-setting-slnt-6: 6;
+  --variation-setting-slnt-9: 9;
+  --variation-setting-slnt-12: 12;
+  --variation-setting-slnt-15: 15;
 
   /* Italic axis (ital) - binary, 0 or 1 */
-  --font-var-ital-0: 0;
-  --font-var-ital-1: 1;
+  --variation-setting-ital-0: 0;
+  --variation-setting-ital-1: 1;
 
   /* Optical Size axis (opsz) - varies by font, commonly 8-144pt */
-  --font-var-opsz-8: 8;
-  --font-var-opsz-10: 10;
-  --font-var-opsz-12: 12;
-  --font-var-opsz-14: 14;
-  --font-var-opsz-16: 16;
-  --font-var-opsz-18: 18;
-  --font-var-opsz-20: 20;
-  --font-var-opsz-24: 24;
-  --font-var-opsz-28: 28;
-  --font-var-opsz-32: 32;
-  --font-var-opsz-36: 36;
-  --font-var-opsz-48: 48;
-  --font-var-opsz-60: 60;
-  --font-var-opsz-72: 72;
-  --font-var-opsz-96: 96;
-  --font-var-opsz-144: 144;
+  --variation-setting-opsz-8: 8;
+  --variation-setting-opsz-10: 10;
+  --variation-setting-opsz-12: 12;
+  --variation-setting-opsz-14: 14;
+  --variation-setting-opsz-16: 16;
+  --variation-setting-opsz-18: 18;
+  --variation-setting-opsz-20: 20;
+  --variation-setting-opsz-24: 24;
+  --variation-setting-opsz-28: 28;
+  --variation-setting-opsz-32: 32;
+  --variation-setting-opsz-36: 36;
+  --variation-setting-opsz-48: 48;
+  --variation-setting-opsz-60: 60;
+  --variation-setting-opsz-72: 72;
+  --variation-setting-opsz-96: 96;
+  --variation-setting-opsz-144: 144;
 
   /* Grade axis (GRAD) - varies by font, commonly -200 to 300 */
-  --font-var-GRAD--200: -200;
-  --font-var-GRAD--150: -150;
-  --font-var-GRAD--100: -100;
-  --font-var-GRAD--50: -50;
-  --font-var-GRAD--25: -25;
-  --font-var-GRAD-0: 0;
-  --font-var-GRAD-25: 25;
-  --font-var-GRAD-50: 50;
-  --font-var-GRAD-100: 100;
-  --font-var-GRAD-150: 150;
-  --font-var-GRAD-200: 200;
-  --font-var-GRAD-250: 250;
-  --font-var-GRAD-300: 300;
+  --variation-setting-GRAD--200: -200;
+  --variation-setting-GRAD--150: -150;
+  --variation-setting-GRAD--100: -100;
+  --variation-setting-GRAD--50: -50;
+  --variation-setting-GRAD--25: -25;
+  --variation-setting-GRAD-0: 0;
+  --variation-setting-GRAD-25: 25;
+  --variation-setting-GRAD-50: 50;
+  --variation-setting-GRAD-100: 100;
+  --variation-setting-GRAD-150: 150;
+  --variation-setting-GRAD-200: 200;
+  --variation-setting-GRAD-250: 250;
+  --variation-setting-GRAD-300: 300;
 
   /* Casual axis (CASL) - 0 to 1 */
-  --font-var-CASL-0: 0;
-  --font-var-CASL-25: 0.25;
-  --font-var-CASL-50: 0.5;
-  --font-var-CASL-75: 0.75;
-  --font-var-CASL-100: 1;
+  --variation-setting-CASL-0: 0;
+  --variation-setting-CASL-25: 0.25;
+  --variation-setting-CASL-50: 0.5;
+  --variation-setting-CASL-75: 0.75;
+  --variation-setting-CASL-100: 1;
 
   /* Cursive axis (CRSV) - 0 to 1 */
-  --font-var-CRSV-0: 0;
-  --font-var-CRSV-25: 0.25;
-  --font-var-CRSV-50: 0.5;
-  --font-var-CRSV-75: 0.75;
-  --font-var-CRSV-100: 1;
+  --variation-setting-CRSV-0: 0;
+  --variation-setting-CRSV-25: 0.25;
+  --variation-setting-CRSV-50: 0.5;
+  --variation-setting-CRSV-75: 0.75;
+  --variation-setting-CRSV-100: 1;
 
   /* Monospace axis (MONO) - 0 to 1 */
-  --font-var-MONO-0: 0;
-  --font-var-MONO-25: 0.25;
-  --font-var-MONO-50: 0.5;
-  --font-var-MONO-75: 0.75;
-  --font-var-MONO-100: 1;
+  --variation-setting-MONO-0: 0;
+  --variation-setting-MONO-25: 0.25;
+  --variation-setting-MONO-50: 0.5;
+  --variation-setting-MONO-75: 0.75;
+  --variation-setting-MONO-100: 1;
 }
 
-/* ===== STACKING FONT VARIATION UTILITIES ===== */
+/* ===== FONT VARIATION UTILITIES ===== */
 
 /* Weight axis utilities */
-@utility font-var-wght-* {
-  --font-var-wght: --value(--font-var-wght-*, integer, [integer]);
+@utility variation-setting-wght-* {
+  --variation-setting-wght: --value(--variation-setting-wght-*, integer, [integer]);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Width axis utilities */
-@utility font-var-wdth-* {
-  --font-var-wdth: --value(--font-var-wdth-*, percentage, [percentage]);
+@utility variation-setting-wdth-* {
+  --variation-setting-wdth: --value(--variation-setting-wdth-*, percentage, [percentage]);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Slant axis utilities */
-@utility font-var-slnt-* {
-  --font-var-slnt: --value(--font-var-slnt-*, integer, [integer]);
+@utility variation-setting-slnt-* {
+  --variation-setting-slnt: --value(--variation-setting-slnt-*, integer, [integer]);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Negative slant utilities */
-@utility -font-var-slnt-* {
-  --font-var-slnt: calc(--value(integer, [integer]) * -1);
+@utility -variation-setting-slnt-* {
+  --variation-setting-slnt: calc(--value(integer, [integer]) * -1);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Italic axis utilities */
-@utility font-var-ital {
-  --font-var-ital: 1;
+@utility variation-setting-ital {
+  --variation-setting-ital: 1;
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
-@utility font-var-no-ital {
-  --font-var-ital: 0;
+@utility variation-setting-no-ital {
+  --variation-setting-ital: 0;
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Optical size axis utilities */
-@utility font-var-opsz-* {
-  --font-var-opsz: --value(--font-var-opsz-*, integer, [integer]);
+@utility variation-setting-opsz-* {
+  --variation-setting-opsz: --value(--variation-setting-opsz-*, integer, [integer]);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Grade axis utilities */
-@utility font-var-GRAD-* {
-  --font-var-GRAD: --value(--font-var-GRAD-*, integer, [integer]);
+@utility variation-setting-GRAD-* {
+  --variation-setting-GRAD: --value(--variation-setting-GRAD-*, integer, [integer]);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Negative grade utilities */
-@utility -font-var-GRAD-* {
-  --font-var-GRAD: calc(--value(integer, [integer]) * -1);
+@utility -variation-setting-GRAD-* {
+  --variation-setting-GRAD: calc(--value(integer, [integer]) * -1);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Casual axis utilities */
-@utility font-var-CASL-* {
-  --font-var-CASL: --value(--font-var-CASL-*, number, [number]);
+@utility variation-setting-CASL-* {
+  --variation-setting-CASL: --value(--variation-setting-CASL-*, number, [number]);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Cursive axis utilities */
-@utility font-var-CRSV-* {
-  --font-var-CRSV: --value(--font-var-CRSV-*, number, [number]);
+@utility variation-setting-CRSV-* {
+  --variation-setting-CRSV: --value(--variation-setting-CRSV-*, number, [number]);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* Monospace axis utilities */
-@utility font-var-MONO-* {
-  --font-var-MONO: --value(--font-var-MONO-*, number, [number]);
+@utility variation-setting-MONO-* {
+  --variation-setting-MONO: --value(--variation-setting-MONO-*, number, [number]);
   font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-/* ===== SEMANTIC UTILITIES ===== */
-
-/* Semantic weight utilities */
-@utility font-var-thin {
-  --font-var-wght: 100;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-extralight {
-  --font-var-wght: 200;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-light {
-  --font-var-wght: 300;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-normal {
-  --font-var-wght: 400;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-medium {
-  --font-var-wght: 500;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-semibold {
-  --font-var-wght: 600;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-bold {
-  --font-var-wght: 700;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-extrabold {
-  --font-var-wght: 800;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-black {
-  --font-var-wght: 900;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-/* Semantic width utilities */
-@utility font-var-ultra-condensed {
-  --font-var-wdth: 50%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-extra-condensed {
-  --font-var-wdth: 62.5%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-condensed {
-  --font-var-wdth: 75%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-semi-condensed {
-  --font-var-wdth: 87.5%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-normal-width {
-  --font-var-wdth: 100%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-semi-expanded {
-  --font-var-wdth: 112.5%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-expanded {
-  --font-var-wdth: 125%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-extra-expanded {
-  --font-var-wdth: 150%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
-}
-
-@utility font-var-ultra-expanded {
-  --font-var-wdth: 200%;
-  font-variation-settings: 
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* ===== CUSTOM AXIS UTILITIES ===== */
 
 /* Generic utilities for any axis */
-@utility font-var-* {
+@utility variation-setting-* {
   font-variation-settings: 
     --value('*') --value([*]),
-    "wght" var(--font-var-wght, 400),
-    "wdth" var(--font-var-wdth, 100%),
-    "slnt" var(--font-var-slnt, 0),
-    "ital" var(--font-var-ital, 0),
-    "opsz" var(--font-var-opsz, 16),
-    "GRAD" var(--font-var-GRAD, 0),
-    "CASL" var(--font-var-CASL, 0),
-    "CRSV" var(--font-var-CRSV, 0),
-    "MONO" var(--font-var-MONO, 0);
+    "wght" var(--variation-setting-wght, 400),
+    "wdth" var(--variation-setting-wdth, 100%),
+    "slnt" var(--variation-setting-slnt, 0),
+    "ital" var(--variation-setting-ital, 0),
+    "opsz" var(--variation-setting-opsz, 16),
+    "GRAD" var(--variation-setting-GRAD, 0),
+    "CASL" var(--variation-setting-CASL, 0),
+    "CRSV" var(--variation-setting-CRSV, 0),
+    "MONO" var(--variation-setting-MONO, 0);
 }
 
 /* ===== RESET UTILITIES ===== */
 
-@utility font-var-reset {
+@utility variation-setting-reset {
   font-variation-settings: normal;
-  --font-var-wght: initial;
-  --font-var-wdth: initial;
-  --font-var-slnt: initial;
-  --font-var-ital: initial;
-  --font-var-opsz: initial;
-  --font-var-GRAD: initial;
-  --font-var-CASL: initial;
-  --font-var-CRSV: initial;
-  --font-var-MONO: initial;
+  --variation-setting-wght: initial;
+  --variation-setting-wdth: initial;
+  --variation-setting-slnt: initial;
+  --variation-setting-ital: initial;
+  --variation-setting-opsz: initial;
+  --variation-setting-GRAD: initial;
+  --variation-setting-CASL: initial;
+  --variation-setting-CRSV: initial;
+  --variation-setting-MONO: initial;
 }
 
-@utility transition-fonts {
+/* ===== TRANSITION UTILITIES ===== */
+
+@utility transition-font-variations {
   --transition-property: font-variation-settings;
 } 
